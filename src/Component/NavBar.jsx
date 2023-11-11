@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
 
+    const [focus,setFocus] = useState("home")
     const navigate = useNavigate();
+
+    if(window.location.pathname === "/" && focus !== "home"){
+        setFocus("home")
+    }
+    else if(window.location.pathname=='/shop' && focus !== "shop"){
+        setFocus("shop")
+    }
+    else if(window.location.pathname=='/blog' && focus !== "blog"){
+        setFocus("blog")
+    }
+    else if(window.location.pathname=='/contact' && focus !== "contact"){
+        setFocus("contact")
+    }
+    else if(window.location.pathname=='/login' && focus !== "login"){
+        setFocus("login")
+    }
+    else if(window.location.pathname=='/signup' && focus !== "signup"){
+        setFocus("signup")
+    }
     return (
         <div className='grid grid-cols-12 p-[10px] h-[80px] border-white border-[1px]'>
             <div className='flex justify-center items-center h-full'>
@@ -28,8 +48,8 @@ const NavBar = () => {
             </div>
             <div className='col-span-7  text-[18px] font-bold  gap-5 flex '>
               
-                <div className='text-center flex  justify-center items-center h-full' onClick={()=>navigate("/")}>
-                   Home
+                <div className='text-center flex  justify-center items-center h-full' onClick={()=>navigate("/")} >
+                   
                 </div>
                 <div className='text-center flex  justify-center items-center h-full' onClick={()=>navigate("/shop")}>
                    Shop
