@@ -49,7 +49,7 @@ const NavBar = () => {
             <div className='col-span-7  text-[18px] font-bold  gap-5 flex '>
               
                 <div className='text-center flex  justify-center items-center h-full' onClick={()=>navigate("/")} >
-                   
+                   Home
                 </div>
                 <div className='text-center flex  justify-center items-center h-full' onClick={()=>navigate("/shop")}>
                    Shop
